@@ -1,41 +1,34 @@
-
 body {
-  padding: 2em;
-  font-family: sans-serif
+  min-height: 500vh;
 }
 
-hr {
-  margin: 80px;
+/* Our animation, let's call it "twirl"! */
+@keyframes twirl {
+  to {
+    transform: translatex(500px)rotate(360deg);
+  }
 }
 
-
-/* Examples of columns that scale automatically with CSS grid, no media queries needed! */
-
-.grid-container-cssgrid {
-  display:grid
+/* The little guy! */
+svg {
+  position: fixed;
+  top: 50%;
+  left: 10%;
+  margin-top: -50px;
+  margin-left: -50px;
+  
+  /* "stick" the animation called "twirl" on 
+  the SVG object. You can play around with 
+  the "1s" property to make the animation 
+  slower or faster in seconds!
+  */
+  animation: twirl 1s ease-in-out infinite;
 }
 
-.grid-container--fill {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-}
-
-.grid-container--fit {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-
-/* Same as above but with CSS columns instead of CSS grid! */
-
-.csscolumns {
-  columns:200px;
-}
-
-/* the blue columns themselves */
-.grid-element {
-  background-color: rgb(82, 160, 212);
-  padding: 30px;
-  gap:2px;
-  color: #fff;
-  border: 2px solid #fff;
-  break-inside: avoid;
+/* document wide animation trigger */
+:root * {
+  animation-play-state: paused;
+  animation-delay: calc(var(--scrollbar) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;  
 }
