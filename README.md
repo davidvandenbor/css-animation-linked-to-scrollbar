@@ -1,4 +1,4 @@
-# Scalable CSS grids and columns without media queries
+# CSS animations linked to scrollbar movement
 
 Play live with this code in **CodeSandBox** > [click here!](https://githubbox.com/davidvandenbor/css-animation-linked-to-scrollbar)
 
