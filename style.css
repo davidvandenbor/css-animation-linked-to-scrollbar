@@ -1,5 +1,6 @@
 body {
   min-height: 500vh;
+  font-family:sans-serif;
 }
 
 /* Our animation, let's call it "twirl"! */
